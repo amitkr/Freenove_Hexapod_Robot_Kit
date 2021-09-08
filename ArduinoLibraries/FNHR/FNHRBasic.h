@@ -16,6 +16,12 @@
 #include <EEPROM.h>
 #include <FlexiTimer2.h>
 
+namespace {
+
+/**
+ * RobotShape
+ *
+ */
 class RobotShape
 {
 public:
@@ -28,6 +34,10 @@ public:
   float f;
 };
 
+/**
+ * EepromAddresses
+ *
+ */
 class EepromAddresses
 {
 public:
@@ -56,6 +66,9 @@ public:
   static constexpr float robotState = 140;
 };
 
+/**
+ * Power
+ */
 class Power
 {
 public:
@@ -97,6 +110,11 @@ private:
   int updateCounter = 0;
 };
 
+/**
+ * Point
+ *
+ *
+ */
 class Point
 {
 public:
@@ -108,6 +126,11 @@ public:
   volatile float x, y, z;
 };
 
+/**
+ * \brief RobotLegsPoints
+ *
+ *
+ */
 class RobotLegsPoints
 {
 public:
@@ -117,6 +140,11 @@ public:
   Point leg1, leg2, leg3, leg4, leg5, leg6;
 };
 
+/**
+ * RobotJoint
+ *
+ *
+ */
 class RobotJoint
 {
 public:
@@ -352,6 +380,8 @@ private:
   void LegsMoveTo(RobotLegsPoints points, float speed);
   void LegsMoveTo(RobotLegsPoints points, int leg, float legSpeed);
   void LegsMoveToRelatively(Point point, float speed);
+};
+
 };
 
 #endif
